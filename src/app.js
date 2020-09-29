@@ -11,6 +11,7 @@ const forecast = require('./utils/forecast');
 
 // Variables
 const app = express();
+const port = process.env.PORT || 5000;
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsDirectoryPath = path.join(__dirname, '../templates/views');
 const partialsDirectoryPath = path.join(__dirname, '../templates/partials');
@@ -84,6 +85,6 @@ app.get('*', (req, res) => {
 });
 
 // Listen On a Port
-app.listen(5000, () => {
-  console.log('The Server is Runnig On Port : 5000');
+app.listen(port, () => {
+  console.log(`The Server is Runnig On Port : ${port}`);
 });

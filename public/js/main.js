@@ -12,20 +12,18 @@ searchForm.addEventListener('submit', (event) => {
   messageTwo.textContent = '';
   messageThree.textContent = '';
 
-  fetch(`http://localhost:5000/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        const { error } = data;
-        if (error) {
-          return (messageOne.textContent = error);
-        } else {
-          const { address, location, forecast } = data;
-          messageOne.textContent = address;
-          messageTwo.textContent = location;
-          messageThree.textContent = forecast;
-        }
-      });
-    }
-  );
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      const { error } = data;
+      if (error) {
+        return (messageOne.textContent = error);
+      } else {
+        const { address, location, forecast } = data;
+        messageOne.textContent = address;
+        messageTwo.textContent = location;
+        messageThree.textContent = forecast;
+      }
+    });
+  });
   inputSearch.value = '';
 });
