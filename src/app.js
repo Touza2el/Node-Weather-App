@@ -17,7 +17,7 @@ const partialsDirectoryPath = path.join(__dirname, '../templates/partials');
 // __dirname =Path To The Folder in Which The app.js File Lives in = The src Directory
 
 app.set('view engine', 'hbs'); // Set The Type of View Engine That We are going to use
-app.set('views', viewsDirectoryPath); // Set Views Directory Location
+app.set('views', viewsDirectoryPath); // Set Views Directory Path
 hbs.registerPartials(partialsDirectoryPath); // Set Partials Directory Path
 
 app.use(express.static(publicDirectoryPath)); // Set Up Static Directory To Serve
